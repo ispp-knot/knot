@@ -1,8 +1,6 @@
-name: Work Item
-description: Work item template
-labels: ["tipo: WI"]
-projects: [egc-fitshub/2]
-assignees: []
+name: Issue
+description: Normal Issue Template
+projects: [ispp-knot/1]
 body:
   - type: textarea
     id: description

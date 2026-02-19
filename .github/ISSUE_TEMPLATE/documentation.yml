@@ -1,6 +1,5 @@
 name: Documentation Task
 description: Documentation task template
-labels: ["tipo: Documentation"]
 projects: [egc-fitshub/2]
 assignees: []
 body:

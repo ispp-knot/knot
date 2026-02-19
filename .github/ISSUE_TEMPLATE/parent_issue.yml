@@ -1,0 +1,14 @@
+name: Parent Issue
+description: Parent issue template
+title: "[PARENT] "
+projects: [ispp-knot/1]
+labels: ["type: parent"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs to be done and why?
+      placeholder: Short summary of the task.
+    validations:
+      required: true

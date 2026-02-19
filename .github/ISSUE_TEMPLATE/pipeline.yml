@@ -1,7 +1,6 @@
 name: Pipeline Task
 description: Pipeline task template
-labels: ["tipo: Pipeline"]
-projects: [egc-fitshub/2]
+projects: [ispp-knot/1]
 assignees: []
 body:
   - type: textarea

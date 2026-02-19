@@ -1,8 +1,6 @@
 name: Incident
 description: Report a bug or incident
-labels: ["tipo: Incidencia"]
-projects: [egc-fitshub/2]
-assignees: ["mquirosq", "javiarellanoo"]
+projects: [ispp-knot/1]
 body:
   - type: input
     id: description
