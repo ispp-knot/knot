@@ -9,7 +9,7 @@ npm i
 ## Lanzar en local
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ## Despliegue
