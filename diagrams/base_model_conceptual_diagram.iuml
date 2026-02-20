@@ -1,0 +1,60 @@
+@startuml
+
+hide empty members
+
+skinparam groupInheritance 2
+
+note "Does the same product \nhas different price \ndepending on size \nand color?" as n1
+n1 -up Product
+
+note "Discounted price \nto be included \ndepending on \ndiscounts model" as n2
+n2 - Product
+
+note "Include location? \nOr use GPS" as n4
+n4 - Client
+
+note "Max ProductStocks: \nAll combinations of \ncolors and sizes" as n5
+
+class Store {
+  name
+  location
+  openingHours
+  aboutUs
+}
+
+class StoreSocialNetwork {
+  socialNetworkName
+  link
+}
+
+class Product {
+  name
+  price
+}
+
+class Size {
+  size
+}
+
+class Color {
+  color
+}
+
+class ProductStock {
+  isAvailable
+}
+
+class Client {
+  name
+}
+
+Product "0..*" -- "1..*" Size
+Product "0..*" -- "1..*" Color
+Product "1" --- "1..*" ProductStock
+(Product, ProductStock) .. n5
+ProductStock "0..*" -left- "1" Size
+ProductStock "0..*" -right- "1" Color
+Store "1" -- "0..*" Product
+Store "1" -- "0..*" StoreSocialNetwork
+
+@enduml
