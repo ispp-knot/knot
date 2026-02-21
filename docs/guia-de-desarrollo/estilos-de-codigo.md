@@ -1,39 +1,84 @@
 ---
 sidebar_position: 1
 ---
+# 🎨 Guía de estilo
 
-# Guia de estilo
+## Qué es esta guía
 
-### Seguimiento del estilo para Java en el desarrollo del Backend
+Esta guía **NO** es una guía de estilo de sintaxis, aunque se aborda la sintaxis se espera que el equipo haga uso de herramientas de linting automaticas. Esto nos permite asegurarnos que todos estamos usando las mismas convenciones. El uso de las herramientas de linting se aborda en [Linting Automático](./lint.md).
 
-Lo primero de todo, es extremadamente recomendable contar con el _**Extension Pack for Java**_ si se usa VSCode para contar con todas las ayudas posibles a la hora del desarrollo y provee una extensión que apoya con linting automático.
+Esta guía **NO** es una guía de arquitectura del proyecto para eso existe [Arquitectura de Spring](./arquitectura-spring.md)
 
-Además, para asegurar que el estilo es lo mejor posible contamos con el plugin Spotless para detectar errores de linting y corregirlos automáticamente.
+Esta guía **SI** es una guía de conceptos y buenas practicas a seguir a la hora de desarrollar el código del proyecto. Incumplir cualquiera de las siguientes instrucciones es motivo de rechazar una PR.
 
-Para usarlo manualmente se tiene que ejecutar lo siguiente:
+Para facilitar el flujo de trabajo y no tener que estar discutiendo las PR sobre este tipo de cuestiones se pide que se lea este documento con detenimiento, se pide que se tenga en cuenta lo leido a la hora de desarrollar y se pide que si algo no queda claro o se tiene cualquier duda se pregunte.
 
-```bash
-mvnw spotless:check
-```
+## Principios generales de código limpio
 
-Una vez ejecutado, se mostrará en la terminal un diff donde las líneas con "-" indican eliminaciones y las líneas con "+" indican adiciones necesarias para cumplir el estilo.
+### Claridad sobre brevedad
 
-Para arreglar los problemas de linting automáticamente ejecutar:
+- Se prefiere código **fácil de entender** antes que conciso.
+- Un nombre explícito vale más que un comentario largo.
 
-```bash
-mvnw spotless:apply
-```
+### Ser explícito
 
-> Recordar que en Windows es .\mvnw o bien .\mvnw.cmd
+- Evita la ambigüedad en la intención: si algo puede entenderse de dos formas, déjalo claro.
+- Ejemplo: en lugar de `var x = getData()`, usa `var userData = fetchUserData()`.
 
-Tras completarse, las correcciones ya estarán aplicadas en los archivos afectados. Se recomienda revisar las modificaciones realizadas de forma automática antes de subir los cambios.
+### Evitar magia y efectos ocultos
 
-Por último, se dispone de un pre-commit.sample hook que se encuentra en la carpeta _.github/githooks/_. Para hacer uso de el hay que copiarlo en la carpeta .git/hooks/ quitando la extension .sample.
+- Funciones y métodos deben tener efectos claros y predecibles.
+- Evita que un método haga demasiadas cosas o modifique estados inesperadamente.
+- El código debe ser honesto.
 
-```bash
-cp ./.github/githooks/pre-commit.sample ./.git/hooks/pre-commit
-```
+## Tipado
 
-> En caso de error en linux usar `chmod +x .git/hooks/pre-commit`
+### Uso de tipos
 
-Ahora, cada vez que se haga commit y algún archivo no siga los estilos correctos le dará un error y no permitirá completar el commit hasta que se soluciones los problemas de estilo.
+- En TypeScript, declara tipos explícitos siempre que sea posible (`const foo: Foo`).
+- En Java usa tipos DTO para input/output.
+- Tipos claros **documentan tu intención**, reducen errores y facilitan refactorización.
+
+### Nulos y opcionales
+
+- Maneja nulos de forma explícita (`Optional<T>` en Java, `T | undefined` en TS).
+
+## Nombres: variables, funciones y clases
+
+### Variables y constantes
+
+- Nombres descriptivos: `totalPrice`, `userEmail` > `tp`, `ue`.
+- Constantes inmutables con mayúsculas y guiones bajos (`MAX_RETRIES`).
+
+### Funciones
+
+- Usar **verbos** para funciones que realizan acciones: `calculateDiscount()`, `sendEmail()`.
+- Funciones deben **hacer una sola cosa**.
+- Evita abreviaciones.
+
+### Clases y interfaces
+
+- Sustantivos claros: `UserService`, `OrderRepository`.
+- Interfaces describiendo contratos: `PaymentProcessor`, `Logger`.
+
+## Organización del código
+
+### División en funciones y métodos
+
+- Cada función debe responder a **una pregunta**: “¿Qué hace esto?”.
+- Mantén funciones **cortas y legibles**.
+- Evita funciones que dependan de muchos estados externos.
+
+### Cohesión
+
+- Agrupa métodos relacionados en clases o módulos.
+- Evita clases/módulos “comodín” que contengan todo tipo de funciones.
+
+## Herencia y composición
+
+- Prefiere **composición sobre herencia**: crea objetos con responsabilidades claras.
+
+## Comentarios y documentación
+
+- **Casi siempre deben evitarse**. El código debe ser **autoexplicativo**.
+- Comenta solo cuando la intención **no pueda deducirse del código mismo** (ej. limitaciones técnicas, referencias externas, decisiones de diseño complejas).

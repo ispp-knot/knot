@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
-# Migraciones
+# 🕊️ Migraciones
 
 **Todos somos responsables de las migraciones que creamos**. Una migración mal hecha puede **borrar datos permanentemente**. Las migraciones **serán revisadas en los PRs** y **pueden generar conflictos** que **han de ser resueltos manualmente**. Esto es parte de la responsabilidad de desarrollar en el backend.
 
@@ -54,4 +54,3 @@ Ejecutar el servidor con el perfil prod también aplica las migraciones automát
 ```bash
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=prod
 ```
-
