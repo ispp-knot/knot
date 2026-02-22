@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Guia de como instalar el frontend de Donde Siempre
+# Instalación del frontend
 
 ## Dependencias
 ### `Framework y renderizado`
@@ -32,3 +32,5 @@ Tambien se tiene un archivo *docker-compose* por si se quiere ejecutar en un con
 Para ello, se debera tener docker instalado e iniciado (para usuarios de Windows se necesita tener [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/))
 
 Luego de tener iniciado Docker, ejecutar `docker compose -d up` para iniciar el contenedor y `docker compose down` para apagarlo
+
+Por último, antes de comenzar, se aconseja encarecidamente consultar la sección de [linting automático para el frontend](../guia-de-desarrollo/lint.md#linting-del-frontend).
