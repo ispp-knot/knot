@@ -10,7 +10,9 @@ Next.js + React + React DOM (*next, react, react-dom*): Construyen la aplicació
 
 ### `Estilos y UI`
 Tailwind CSS stack (*tailwindcss, @tailwindcss/postcss, tailwind-merge, tw-animate-css*): Sistema de estilos por clases, animaciones y gestión de conflictos entre estilos.
+
 Sistema de componentes (*radix-ui, shadcn, class-variance-authority, clsx*): Creación de componentes reutilizables, accesibles y con estilos dinámicos según estado/props.
+
 Iconos (*lucide-react*): Iconos SVG listos para usar como componentes React.
 
 ### `PWA / Offline / Caché`
@@ -23,13 +25,11 @@ TypeScript + tipos (*typescript, @types/node, @types/react, @types/react-dom*): 
 Linting (*eslint, eslint-config-next*): Detectan errores, malas prácticas y mantienen consistencia en el código.
 
 ## Instalación
-Todas las dependencias están en el package.json, ejecutando:
+Todas las dependencias están en el package.json, ejecutando el siguiente comando se debería de instalar todo lo necesario para ejecutar el frontend:
 
 ```bash
 npm install
 ```
-
-se debería de instalar todo lo necesario para ejecutar el frontend.
 
 Luego para ejecutar en local:
 
