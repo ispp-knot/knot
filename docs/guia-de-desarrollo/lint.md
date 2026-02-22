@@ -37,3 +37,25 @@ cp ./.github/githooks/pre-commit.sample ./.git/hooks/pre-commit
 > En caso de error en linux usar `chmod +x .git/hooks/pre-commit`
 
 Ahora, cada vez que se haga commit y algún archivo no siga los estilos correctos le dará un error y no permitirá completar el commit hasta que se soluciones los problemas de estilo.
+
+## Linting del Frontend
+
+Al igual que para el backend, es muy recomendable tener instaladas las extensiones de **ESLint** y **Prettier** para VSCode.
+
+Para mantener una base de código consistente, contamos con ESLint, Prettier y lint-staged. Estas herramientas detectan errores de estilo y corrigen automáticamente los más sencillos. Los que requieren intervención manual se muestran por consola.
+
+Para ejecutarlo manualmente:
+
+```bash
+npm run lint-staged
+```
+
+Tras completarse, las correcciones automáticas ya estarán aplicadas y los problemas que requieran correciones manuales serán listados en consola.
+
+Por último, se dispone de un pre-commit hook en `.husky/`. Cada vez que se haga commit se ejecutará `npm run lint-staged` automáticamente. Si se detectan problemas:
+
+- Las correcciones automáticas se aplicarán pero el commit quedará **bloqueado**.
+- Revisa los cambios, haz `git add` y vuelve a hacer `git commit`.
+
+Este hook queda activo tras hacer `npm install`.
+En caso de que note que no está funcionando ejecutar `npm run prepare-husky`.
