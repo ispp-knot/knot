@@ -19,8 +19,8 @@ void shouldReturnZero_whenListIsEmpty() { ... }
 
 ## Buenas prácticas para testear en Spring
 
-* **Aislar lo más posible los tests unitarios**.
-* **Usar mocks para dependencias externas** (`Mockito`).
-* **Separar unitarios de integración y E2E** → permite ejecutar rápido los unitarios en builds locales.
-* **Repetibilidad:** cada test debe ser independiente y reproducible.
-* **Cobertura de casos importantes, no solo happy path** → errores, límites, datos nulos.
+* Aislar lo más posible los tests unitarios.
+* Usar mocks para dependencias externas (`Mockito`).
+* Separar unitarios de integración y E2E → permite ejecutar rápido los unitarios en builds locales.
+* Repetibilidad: cada test debe ser independiente y reproducible.
+* Cobertura de casos importantes, no solo happy path → errores, límites, datos nulos.
