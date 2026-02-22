@@ -15,3 +15,5 @@ npm run start
 ## Despliegue
 
 El despliegue es automatico 👷, simplemente sube a main y el resto se hará solo.
+Desplegado en:
+https://ispp-knot.github.io/knot/
