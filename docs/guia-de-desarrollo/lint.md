@@ -47,14 +47,15 @@ Para mantener una base de código consistente, contamos con ESLint, Prettier y l
 Para ejecutarlo manualmente:
 
 ```bash
-npx lint-staged
+npm run lint-staged
 ```
 
-Tras completarse, las correcciones automáticas ya estarán aplicadas y los problemas manuales serán listados en consola.
+Tras completarse, las correcciones automáticas ya estarán aplicadas y los problemas que requieran correciones manuales serán listados en consola.
 
-Por último, se dispone de un pre-commit hook en `.husky/`. Cada vez que se haga commit se ejecutará `npx lint-staged` automáticamente. Si se detectan problemas:
+Por último, se dispone de un pre-commit hook en `.husky/`. Cada vez que se haga commit se ejecutará `npm run lint-staged` automáticamente. Si se detectan problemas:
 
 - Las correcciones automáticas se aplicarán pero el commit quedará **bloqueado**.
 - Revisa los cambios, haz `git add` y vuelve a hacer `git commit`.
 
 Este hook queda activo tras hacer `npm install`.
+En caso de que note que no está funcionando ejecutar `npm run prepare-husky`.
