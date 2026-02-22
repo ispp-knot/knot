@@ -26,6 +26,10 @@ Interactuan con la base de datos, usaremos JPARepository. Se deben evitar fallos
 
 Aqui se gestiona **TODA** la lógica de negocio. Las excepciones deben ser lanzadas aqui como muy tarde para evitar errores en la base de datos. Los servicios pueden consultar a repositorios o a otros servicios (cuidado con las dependencias circulares).
 
+Todos los servicios necesitan ser profundamente testeados.
+
 ## Controladores
 
 Reciben las peticiones HTTP, es el punto de entrada y salida de nuestros datos de la aplicacion, deben llamar exclusivamente a servicios.
+
+Todos los controladores necesitan ser profundamente testeados.
