@@ -57,5 +57,4 @@ Por último, se dispone de un pre-commit hook en `.husky/`. Cada vez que se haga
 - Las correcciones automáticas se aplicarán pero el commit quedará **bloqueado**.
 - Revisa los cambios, haz `git add` y vuelve a hacer `git commit`.
 
-Este hook queda activo tras hacer `npm install`.
-En caso de que note que no está funcionando ejecutar `npm run prepare-husky`.
+Para activar los hooks de husky ejecute `npm run prepare-husky`.
