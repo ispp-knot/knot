@@ -94,4 +94,20 @@ mvnw test
 
 > Recordar tener levantada la base de datos de pruebas
 
+### 4. Hooks
+
+Para mantener consistencia en el desarrollo y hacer que lo que llegue a Github siga buenas prácticas se hará uso de ciertos hooks pre-commit. A continuación, una lista con aquellos disponibles en la carpeta `.github/githooks/`:
+
+- **pre-commit.sample**: Para detectar errores de linting. Configuración:
+
+```bash
+cp ./.github/githooks/pre-commit.sample ./.git/hooks/pre-commit
+```
+
+- **commit-msg.sample**: Para detectar no seguimientos de Conventional Commits. Configuración:
+
+```bash
+cp ./.github/githooks/commit-msg.sample ./.git/hooks/commit-msg
+```
+
 Por último, antes de comenzar, se aconseja encarecidamente consultar la sección de [linting automático para el backend](../guia-de-desarrollo/lint.md#linting-del-backend).
