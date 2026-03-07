@@ -84,7 +84,7 @@ El nombre de las tablas debe ser `snake_case`
 
 ## Estructura de archivos
 
-Se utiliza una estructura de archivos basada en modulos, en esta existe una carpeta `modules` y dentro de ella una carpeta para cada modulo. En esas carpetas hay carpetas para `models`, `repositories`,`services`,`controllers`,`dtos`,`exception`. Además hay una carpeta `common` para aquellas cosas que sean compartidas entre modulos. 
+Se utiliza una estructura de archivos basada en módulos, en esta existe una carpeta `modules` y dentro de ella una carpeta para cada módulo. En esas carpetas hay carpetas para `models`, `repositories`,`services`,`controllers`,`dtos`,`exception`. Además hay una carpeta `common` para aquellas cosas que sean compartidas entre módulos. 
 ```
 ├── modules
 │   ├── auth
